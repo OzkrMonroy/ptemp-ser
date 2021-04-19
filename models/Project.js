@@ -29,6 +29,10 @@ const ProjectSchema = mongoose.Schema({
   tags: {
     type: Array,
     required: true
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now()
   }
 });
 
