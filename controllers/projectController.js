@@ -30,10 +30,10 @@ exports.updateProject = async (req, res) => {
   }
 
   const { name } = req.body;
-  const newProject = {};
+  let newProject = {};
 
   if (name) {
-    newProject.projectName = projectName;
+    newProject = req.body;
   }
 
   try {

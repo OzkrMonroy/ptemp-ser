@@ -13,7 +13,7 @@ router.post('/', [
   check('tags', 'Los tags son obligatorios').isArray({min: 1})
 ], projectController.createProject);
 
-router.put('/', [
+router.put('/:id', [
   check('name', 'El nombre del proyecto es obligatorio.').not().isEmpty(),
   check('description', 'La descripción es obligatoria').not().isEmpty(),
   check('imageUrl', 'La url de imagen es obligatoria').not().isEmpty(),
