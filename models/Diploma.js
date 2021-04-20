@@ -1,0 +1,26 @@
+const mongoose = require('mongoose');
+
+const DiplomaSchema = mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  description: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  imageUrl: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  diplomaUrl: {
+    type: String,
+    required: true,
+    trim: true
+  }
+});
+
+module.exports = mongoose.model('Diploma', DiplomaSchema);
