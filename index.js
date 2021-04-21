@@ -6,6 +6,7 @@ const authRouter = require('./routes/auth');
 const usersRouter = require('./routes/users');
 const projectsRouter = require('./routes/projects');
 const diplomasRouter = require('./routes/diplomas');
+const portfolioRouter = require('./routes/portfolio');
 
 const app = express();
 connectToDB();
@@ -18,6 +19,7 @@ app.use('/api/auth', authRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/projects', projectsRouter);
 app.use('/api/diplomas', diplomasRouter);
+app.use('/portfolio', portfolioRouter);
 
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Servidor running on Port ${PORT}`);
