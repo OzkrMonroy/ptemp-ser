@@ -16,7 +16,7 @@ const DiplomaSchema = mongoose.Schema({
     required: true,
     trim: true
   },
-  diplomaUrl: {
+  courseUrl: {
     type: String,
     required: true,
     trim: true
