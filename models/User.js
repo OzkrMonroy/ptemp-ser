@@ -17,6 +17,25 @@ const UsersSchema = mongoose.Schema({
     required: true,
     trim: true
   },
+  photo: {
+    type: String,
+    trim: true
+  },
+  skills: {
+    type: Object,
+  },
+  hobbies: {
+    type: Array
+  },
+  description: {
+    type: String
+  },
+  career: {
+    type: String
+  },
+  socialMedia: {
+    type: Array
+  },
   createdAt: {
     type: Date,
     default: Date.now()
