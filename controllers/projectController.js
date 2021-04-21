@@ -11,7 +11,7 @@ exports.createProject = async (req, res) => {
   try {
     let project = await Project.findOne({ name });
     if(project){
-      return res.status(400).json({ msg: 'A project with that name already exits.'});
+      return res.status(400).json({ msg: 'A project with that name already exists.'});
     }
 
     project = new Project(req.body);
