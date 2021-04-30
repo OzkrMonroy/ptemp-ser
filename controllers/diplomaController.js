@@ -1,5 +1,4 @@
 const Diploma = require('../models/Diploma');
-const express = require('express');
 const { validationResult } = require('express-validator');
 
 exports.createDiploma = async (req, res) => {
@@ -9,9 +8,9 @@ exports.createDiploma = async (req, res) => {
     res.status(400).json({ errors: errors.array() });
   }
 
-  const { name } = req.body;
+  const { title } = req.body;
   try {
-    let diploma = await Diploma.findOne({ name });
+    let diploma = await Diploma.findOne({ title });
     if(diploma){
       res.status(400).json({ msg: 'A Diploma with that name already exists'});
     }
@@ -32,10 +31,10 @@ exports.updateDiploma = async (req, res) => {
     res.status(400).json({ errors: errors.array() });
   }
 
-  const { name } = req.body;
+  const { title } = req.body;
   let newDiploma;
 
-  if(name){
+  if(title){
     newDiploma = req.body
   }
 
@@ -68,7 +67,7 @@ exports.deleteDiploma = async (req, res) => {
 
 exports.fetchAllDiplomas = async (req, res) => {
   try {
-    const diplomasList = await Diploma.find().sort({ createdAt: -1 });
+    const diplomasList = await Diploma.find();
     res.status(200).json({ diplomasList });
   } catch (error) {
     res.status(500).send('An error occured while get diplomas.');

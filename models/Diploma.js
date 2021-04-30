@@ -16,7 +16,7 @@ const DiplomaSchema = mongoose.Schema({
     required: true,
     trim: true
   },
-  courseUrl: {
+  diplomaUrl: {
     type: String,
     required: true,
     trim: true
@@ -24,7 +24,7 @@ const DiplomaSchema = mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now()
-  }
+  },
 });
 
 module.exports = mongoose.model('Diploma', DiplomaSchema);
