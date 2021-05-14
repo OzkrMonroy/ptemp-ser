@@ -10,7 +10,10 @@ const portfolioRouter = require('./routes/portfolio');
 
 const app = express();
 connectToDB();
-//app.use(cors());
+const corsConfig = {
+  origin: process.env.FRONTEND_URL
+}
+app.use(cors(corsConfig));
 
 const port = process.env.port || 4000;
 
