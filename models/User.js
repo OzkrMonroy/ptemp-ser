@@ -22,7 +22,7 @@ const UsersSchema = mongoose.Schema({
     trim: true
   },
   skills: {
-    type: Object,
+    type: Array,
   },
   hobbies: {
     type: Array
@@ -35,6 +35,9 @@ const UsersSchema = mongoose.Schema({
   },
   socialMedia: {
     type: Array
+  },
+  cv: {
+    type: String
   },
   createdAt: {
     type: Date,

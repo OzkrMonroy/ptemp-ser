@@ -10,4 +10,6 @@ router.post('/', [
   check('password', 'The password must be six characteres long').isLength({ min: 6 })
 ], userController.createUser);
 
+router.get('/', userController.getUserData);
+
 module.exports = router;

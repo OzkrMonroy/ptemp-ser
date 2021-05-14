@@ -42,3 +42,13 @@ exports.createUser = async (req, res) => {
     res.status(400).send('It was an error.');
   }
 }
+
+exports.getUserData = async (req, res) => {
+  try {
+    const user = await User.find().select('-password');
+    res.json({ user: user[0] });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ msg: 'Internal Server Error.' });
+  }
+};
