@@ -12,7 +12,7 @@ const app = express();
 connectToDB();
 app.use(cors());
 
-const PORT = process.env.PORT || 4000;
+const port = process.env.port || 4000;
 
 app.use(express.json({ extended: true }));
 app.use('/api/auth', authRouter);
@@ -21,6 +21,6 @@ app.use('/api/projects', projectsRouter);
 app.use('/api/diplomas', diplomasRouter);
 app.use('/portfolio', portfolioRouter);
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Servidor running on Port ${PORT}`);
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server running on Port ${port}`);
 });
